@@ -1,0 +1,1526 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>引越し手続き窓口 コールセンター運用マニュアル v0.1</title>
+  <meta name="description" content="引越しワンストップサービス「引越し手続き窓口」コンシェルジュ・SV向けコールセンター運用マニュアル v0.1 ドラフト">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- Sidebar Navigation -->
+<nav id="sidebar" aria-label="章のナビゲーション">
+  <div class="sidebar-header">
+    <div class="sidebar-logo">
+      <span class="sidebar-logo-icon">📋</span>
+      <div>
+        <div class="sidebar-title">運用マニュアル</div>
+        <div class="sidebar-version">v0.1 ドラフト</div>
+      </div>
+    </div>
+    <button id="sidebar-toggle" aria-label="サイドバーを閉じる">✕</button>
+  </div>
+
+  <div class="sidebar-search">
+    <input type="text" id="search-input" placeholder="🔍 検索..." autocomplete="off">
+  </div>
+
+  <ul class="sidebar-nav" role="list">
+    <li><a href="#section-0" class="nav-item" data-section="0">0. このマニュアルについて</a></li>
+    <li><a href="#section-1" class="nav-item" data-section="1">1. サービス概要</a></li>
+    <li><a href="#section-2" class="nav-item" data-section="2">2. 役割分担とNG集</a></li>
+    <li><a href="#section-3" class="nav-item" data-section="3">3. 問合せ窓口・エスカレ</a></li>
+    <li><a href="#section-4" class="nav-item" data-section="4">4. 基本応対ルール</a></li>
+    <li><a href="#section-5" class="nav-item" data-section="5">5. オペレーション</a></li>
+    <li><a href="#section-6" class="nav-item" data-section="6">6. トークスクリプト集</a></li>
+    <li><a href="#section-7" class="nav-item" data-section="7">7. CS・クレーム対応</a></li>
+    <li><a href="#section-8" class="nav-item" data-section="8">8. Q&amp;A集</a></li>
+    <li class="nav-divider"></li>
+    <li><a href="#section-appendix" class="nav-item" data-section="appendix">付録</a></li>
+    <li><a href="#section-E" class="nav-item" data-section="E">付録E. 項目別トークスクリプト</a></li>
+  </ul>
+</nav>
+
+<!-- Overlay for mobile -->
+<div id="sidebar-overlay" class="sidebar-overlay"></div>
+
+<!-- Main Content -->
+<div class="layout">
+  <button id="menu-btn" aria-label="メニューを開く">☰ メニュー</button>
+
+  <main id="main-content">
+
+    <!-- Hero -->
+    <header class="hero">
+      <div class="hero-badge">INTERNAL DOCUMENT · DRAFT v0.1</div>
+      <h1 class="hero-title">引越し手続き窓口<br>コールセンター運用マニュアル</h1>
+      <p class="hero-subtitle">引越しワンストップサービス「引越し手続き窓口」｜コンシェルジュ・SV向け</p>
+      <div class="hero-meta">
+        <span class="meta-chip">📅 2026年10月22日</span>
+        <span class="meta-chip">🏢 株式会社Wiz</span>
+        <span class="meta-chip warn">⚠️ ドラフト版</span>
+      </div>
+      <div class="hero-tags">
+        <span class="tag">行政手続き</span>
+        <span class="tag">民間手続き</span>
+        <span class="tag">トークスクリプト</span>
+        <span class="tag">Q&amp;A</span>
+        <span class="tag">CS対応</span>
+      </div>
+    </header>
+
+    <!-- Search results area -->
+    <div id="search-results" class="search-results" hidden>
+      <div class="search-results-header">
+        <span id="search-results-count"></span>
+        <button id="clear-search">✕ 検索をクリア</button>
+      </div>
+      <ul id="search-results-list"></ul>
+    </div>
+
+    <!-- 0. このマニュアルについて -->
+    <section id="section-0" class="section">
+      <div class="section-header">
+        <div class="section-number">0</div>
+        <h2>このマニュアルについて</h2>
+      </div>
+
+      <div class="card">
+        <h3>目的</h3>
+        <p>コンシェルジュ（オペレーター）が、どのお客様にも同じ品質で「楽に・迷わず・安心して」引越し手続きを進めていただけるよう、オペレーション・トーク・CS（顧客満足）・Q&amp;Aを1冊にまとめた運用基準です。</p>
+      </div>
+
+      <div class="card">
+        <h3>根拠資料（添付5点）</h3>
+        <ul class="doc-list">
+          <li>プレスリリース（2026年10月提供開始）</li>
+          <li>サービス利用規約</li>
+          <li>自治体説明会資料 v5</li>
+          <li>マイナポータルAPI利用企画書（NTTデータ）</li>
+          <li>FAQ（利用者向け想定問答／自治体向け事務内容）</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3>表記ルール</h3>
+        <div class="legend-grid">
+          <div class="legend-item">
+            <span class="badge-plain">無印</span>
+            <span>添付資料に記載のある事項</span>
+          </div>
+          <div class="legend-item">
+            <span class="badge-proposal">【提案】</span>
+            <span>資料に記載がなく、本マニュアルで置いた運用案です。承認後に確定させてください</span>
+          </div>
+          <div class="legend-item">
+            <span class="badge-check">【要確認】</span>
+            <span>資料間で内容が異なる、または未確定の事項です。一覧は付録Aにあります</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="alert alert-warning">
+        <strong>⚠️ ご注意</strong><br>
+        添付FAQの多くは他社ポータル（Smyb・引越れんらく帳・ペンリィ）の記載がベースです。本書のQ&amp;Aは「引越し手続き窓口」向けに読み替えましたが、画面名称・タイムアウト時間など当サービス固有の仕様が未検証のものには【要確認】を付けています。リリース前に実機で確認してください。
+      </div>
+    </section>
+
+    <!-- 1. サービス概要 -->
+    <section id="section-1" class="section">
+      <div class="section-header">
+        <div class="section-number">1</div>
+        <h2>サービス概要</h2>
+      </div>
+
+      <div class="subsection" id="s1-1">
+        <h3>1-1. サービスの位置づけ</h3>
+        <div class="card">
+          <ul class="bullet-list">
+            <li>運営は<strong>株式会社Wiz</strong>。サイト名「引越し手続き窓口」（引越しワンストップサービス）</li>
+            <li>デジタル庁が推進する「引越し手続オンラインサービス」に対応した民間の引越しポータルです。NTTデータの申請データ流通基盤「BizMINT」を経由してマイナポータル（ぴったりサービス）に接続しています</li>
+            <li>本人確認と電子署名には、マイナンバーカードと<strong>xID株式会社</strong>の「xIDアプリ」を使います</li>
+            <li>開始時は<strong>100自治体</strong>の特設ページを公開し、順次拡大します。ただし自治体への申請（転出届・転入予定連絡）自体は全国すべての自治体に対応しています</li>
+            <li>コンセプトは<strong>『楽（らく・たのしい）』</strong>。専属コンシェルジュによる有人電話サポートで「誰も取り残さない」ことが最大の強みです</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="subsection" id="s1-2">
+        <h3>1-2. 提供する手続き（2026年10月時点）</h3>
+        <div class="card">
+          <div class="two-col-cards">
+            <div class="col-card">
+              <div class="col-card-header admin">🏛️ 行政手続き</div>
+              <ul>
+                <li>転出届</li>
+                <li>転入予定連絡（転居予定連絡）</li>
+                <li>上記の取消</li>
+              </ul>
+            </div>
+            <div class="col-card">
+              <div class="col-card-header civil">🏠 民間手続き</div>
+              <ul>
+                <li>電気の開始・停止</li>
+                <li>ガスの開始・停止</li>
+                <li>水道の手続き</li>
+                <li>インターネット回線の移転・新規</li>
+              </ul>
+            </div>
+          </div>
+          <p class="note">※利用できる手続きは、自治体・地域・サービス提供状況によって異なります。</p>
+        </div>
+      </div>
+
+      <div class="subsection" id="s1-3">
+        <h3>1-3. お客様に必要なもの</h3>
+        <div class="two-col-cards">
+          <div class="card">
+            <div class="col-card-header admin">🏛️ 行政手続き</div>
+            <ul class="bullet-list">
+              <li>マイナンバーカード</li>
+              <li>署名用電子証明書パスワード（英数字6〜16文字）</li>
+              <li>xIDアプリ</li>
+              <li>NFC搭載スマートフォン</li>
+            </ul>
+          </div>
+          <div class="card">
+            <div class="col-card-header civil">🏠 民間手続き</div>
+            <ul class="bullet-list">
+              <li>マイページ登録用のメールアドレス（GmailやLINEも可）</li>
+              <li>電話番号</li>
+            </ul>
+          </div>
+        </div>
+        <div class="card">
+          <div class="info-row">
+            <span class="info-label">推奨環境</span>
+            <span>PC＝Edge・Chrome・Firefox・Safari　｜　Android＝Chrome　｜　iOS＝Safari</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="subsection" id="s1-4">
+        <h3>1-4. 料金</h3>
+        <div class="card highlight-card">
+          <p>💰 利用料は<strong>無料</strong>です。端末や通信料はお客様のご負担です。電気・ガス等で事業者と新規契約が成立した場合は、各事業者のサービス利用料等が発生することがあります。</p>
+        </div>
+      </div>
+
+      <div class="subsection" id="s1-5">
+        <h3>1-5. 提供時間</h3>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>チャネル</th><th>提供時間</th><th>備考</th></tr></thead>
+            <tbody>
+              <tr>
+                <td>Webサイト</td>
+                <td>24時間365日</td>
+                <td>メンテナンス等で停止することあり。SLAなし・ベストエフォート</td>
+              </tr>
+              <tr>
+                <td>コンシェルジュ電話</td>
+                <td>10:00〜19:00</td>
+                <td><span class="badge-check">【要確認】</span> 企画書は「10〜20時予定」、説明会資料のメール窓口は「平日10:00〜19:00」と記載が分かれています。年末年始を除き土日祝も対応</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="subsection" id="s1-6">
+        <h3>1-6. お客様の全体の流れ</h3>
+        <div class="card">
+          <div class="flow">
+            <div class="flow-step">
+              <div class="flow-num">1</div>
+              <div>自治体ページで引越し元・引越し先を選び、マイページを登録（メール／LINE／Google）</div>
+            </div>
+            <div class="flow-arrow">↓</div>
+            <div class="flow-step">
+              <div class="flow-num">2</div>
+              <div>「引越しやることリスト」で必要な手続きを確認</div>
+            </div>
+            <div class="flow-arrow">↓</div>
+            <div class="flow-step admin">
+              <div class="flow-num admin">3</div>
+              <div><strong>【行政】</strong> 注意事項の確認 → 引越し日・住所 → 引越し対象者 → 来庁予定日 → 入力内容の確認 → マイナンバーカード本人確認（xID連携）→ 電子署名 → 送信</div>
+            </div>
+            <div class="flow-arrow">↓</div>
+            <div class="flow-step">
+              <div class="flow-num">4</div>
+              <div>申請状況照会画面で、転出元自治体の処理が「完了」になったことを確認</div>
+            </div>
+            <div class="flow-arrow">↓</div>
+            <div class="flow-step important">
+              <div class="flow-num important">5</div>
+              <div>引越し日から<strong>14日以内</strong>に、転入先自治体の窓口へ来庁して転入届（転居届）を提出</div>
+            </div>
+            <div class="flow-arrow">↓</div>
+            <div class="flow-step civil">
+              <div class="flow-num civil">6</div>
+              <div><strong>【民間】</strong> Webで申込 → コンシェルジュが電話で手続き → 事業者から完了等の連絡</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. 役割分担 -->
+    <section id="section-2" class="section">
+      <div class="section-header">
+        <div class="section-number">2</div>
+        <h2>役割分担と「できること／できないこと」</h2>
+      </div>
+
+      <div class="subsection">
+        <h3>2-1. 基本原則</h3>
+        <div class="card">
+          <div class="principle-row">
+            <span class="principle-icon">🏛️</span>
+            <span>行政手続きは「<strong>ご本人が申請、コンシェルジュは伴走</strong>」</span>
+          </div>
+          <div class="principle-row">
+            <span class="principle-icon">🏠</span>
+            <span>民間手続きは「<strong>コンシェルジュが電話で手続き</strong>」</span>
+          </div>
+          <p class="note mt">利用規約上、本サービスに行政手続の取次は含まれず、行政手続の受理・処理は自治体がマイナポータルを通じて行います（第3条4項）。民間手続きも受理・開通の可否や時期は事業者の判断であり、当社は結果や時期を保証しません（同条3項）。</p>
+        </div>
+      </div>
+
+      <div class="subsection">
+        <h3>2-2. できないこと（NG集）</h3>
+        <div class="alert alert-danger">
+          <strong>🚫 以下の行為は禁止</strong>
+          <ul class="mt">
+            <li>行政手続きの「取次」（代わりに申請すること）</li>
+            <li>自治体・事業者の処理結果・時期の保証</li>
+            <li>マイナンバー（12桁）の取得・記録</li>
+            <li>パスワード・PIN・暗証番号の聴取・メモ・復唱</li>
+            <li>「必ず」「絶対」「今日中に」等の断定・保証表現の使用</li>
+            <li>特定事業者への誘導・営業行為</li>
+            <li>他社ポータル・事業者・自治体への批判</li>
+            <li>推測での回答</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. 問合せ窓口 -->
+    <section id="section-3" class="section">
+      <div class="section-header">
+        <div class="section-number">3</div>
+        <h2>問合せ窓口とエスカレーション</h2>
+      </div>
+
+      <div class="subsection">
+        <h3>3-1. 関係各社の窓口（案内先）</h3>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>問合せ内容</th><th>案内先</th></tr></thead>
+            <tbody>
+              <tr><td>サービスの使い方・申請状況照会</td><td>引越し手続き窓口（当窓口）<br><a href="mailto:hikkoshi-tetsuduki@012grp.co.jp">hikkoshi-tetsuduki@012grp.co.jp</a></td></tr>
+              <tr><td>自治体への申請処理状況</td><td>各転出元・転入先自治体の窓口</td></tr>
+              <tr><td>電気・ガス・水道・インターネットの進捗</td><td>各事業者へ直接</td></tr>
+              <tr><td>xIDアプリの使い方・PIN再設定</td><td>xID株式会社（平日10:00〜17:00）</td></tr>
+              <tr><td>マイナンバーカードのパスワードロック解除</td><td>お住まいの自治体窓口 または コンビニ端末</td></tr>
+              <tr><td>会社情報</td><td><a href="https://012grp.co.jp/" target="_blank" rel="noopener">012grp.co.jp</a></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="subsection">
+        <h3>3-2. エスカレーション基準 <span class="badge-proposal">【提案】</span></h3>
+        <div class="alert alert-danger">
+          <strong>🚨 即時エスカレーション（通話中でもSVを呼ぶ）</strong>
+          <ul class="mt">
+            <li>個人情報の誤送付・漏洩の疑い</li>
+            <li>なりすましの疑い</li>
+            <li>同じ症状が短時間に複数件</li>
+            <li>脅迫的言動・反社会的勢力の疑い</li>
+            <li>報道機関からの連絡</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. 基本応対ルール -->
+    <section id="section-4" class="section">
+      <div class="section-header">
+        <div class="section-number">4</div>
+        <h2>基本応対ルール</h2>
+      </div>
+
+      <div class="subsection">
+        <h3>4-1. 応対の基本姿勢</h3>
+        <div class="card">
+          <p>当サービスの価値は「Webの手軽さ」と「人の安心感」の掛け合わせです。次の3点を全応対で守ります。</p>
+          <div class="three-pillars">
+            <div class="pillar">
+              <div class="pillar-icon">😌</div>
+              <div class="pillar-title">楽に</div>
+              <div class="pillar-desc">お客様の負担を増やさない。手順は1ステップずつ、短く案内する</div>
+            </div>
+            <div class="pillar">
+              <div class="pillar-icon">🧭</div>
+              <div class="pillar-title">迷わず</div>
+              <div class="pillar-desc">結論→理由→次の行動の順で話す。「今、画面に何と表示されていますか」と現在地を確認する</div>
+            </div>
+            <div class="pillar">
+              <div class="pillar-icon">🛡️</div>
+              <div class="pillar-title">安心して</div>
+              <div class="pillar-desc">急かさない。専門用語は言い換える（例：「署名用電子証明書のパスワード」→「マイナンバーカードの、英数字6〜16文字のパスワード」）<span class="badge-proposal">【提案】</span></div>
+            </div>
+          </div>
+          <div class="alert alert-info mt">
+            デジタル操作に不慣れな方、ご高齢の方ほど、<strong>ゆっくり・丁寧に・復唱を増やします。</strong>
+          </div>
+        </div>
+      </div>
+
+      <div class="subsection">
+        <h3>4-2. 個人情報の取扱い</h3>
+        <div class="card">
+          <ul class="bullet-list">
+            <li>取得は手続きに必要な最小限にとどめる</li>
+            <li><strong class="danger">マイナンバー（12桁）は取得しない。</strong>お客様から伝えられても聞き取らず、記録もしない</li>
+            <li><strong class="danger">署名用電子証明書パスワード、利用者証明用4桁、xIDのPIN、暗証番号は、聞かない・メモしない・復唱しない</strong> <span class="badge-proposal">【提案】</span></li>
+            <li>申請データは、お客様が選んだ自治体・事業者にのみ連携される。第三者へ渡ることはない</li>
+            <li>NTTデータ側の申請データ保管は<strong>4か月</strong>。期間経過後に消去される</li>
+            <li>個人情報の削除は、ご本人からの請求に応じる。受けたらSVへ引継ぐ <span class="badge-proposal">【提案】</span></li>
+            <li>個人情報はプライバシーマークの基準に則って管理する。作業は入退室管理された執務室で行い、担当者以外が画面を参照できない配置とする。お客様情報を私物端末で撮影・転記しない <span class="badge-proposal">【提案】</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="subsection">
+        <h3>4-3. 電話での本人確認 <span class="badge-proposal">【提案】</span></h3>
+        <div class="card">
+          <p>照会や手続きに入る前に、次のうち<strong>2項目以上</strong>を確認します。</p>
+          <div class="checklist">
+            <label><input type="checkbox"> お名前（フリガナ）</label>
+            <label><input type="checkbox"> マイページ登録のメールアドレス</label>
+            <label><input type="checkbox"> 引越し日</label>
+            <label><input type="checkbox"> 引越し先の自治体名</label>
+            <label><input type="checkbox"> 登録の電話番号</label>
+          </div>
+          <div class="alert alert-warning mt">
+            契約者以外（ご家族など）からの電話は、一般的な使い方のご案内のみとし、手続き・個人情報の開示はしません。民間手続きの契約者は、申請者ご本人のみです。
+          </div>
+        </div>
+      </div>
+
+      <div class="subsection">
+        <h3>4-4. 言ってはいけないこと／気をつけたい表現</h3>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>ルール</th><th>内容</th></tr></thead>
+            <tbody>
+              <tr>
+                <td><span class="badge-ng">NG</span> 断定・保証の禁止</td>
+                <td>「必ず」「絶対」「今日中に」は使わない。自治体・事業者の処理結果や時期は保証できない</td>
+              </tr>
+              <tr>
+                <td><span class="badge-ng">NG</span> 公的サービスと誤認させない</td>
+                <td>「自治体の公認・監修サービス」のように聞こえる表現は避ける。必要に応じて「民間事業者のWizが運営するサービスで、自治体への申請はマイナポータルと同じ仕組みで連携されます」と説明する</td>
+              </tr>
+              <tr>
+                <td><span class="badge-ng">NG</span> 営業・勧誘をしない</td>
+                <td>UI方針は「営業要素なし」。プラン紹介は事実に基づく比較情報の提供にとどめ、特定の事業者へ誘導しない <span class="badge-proposal">【提案】</span></td>
+              </tr>
+              <tr>
+                <td><span class="badge-ng">NG</span> 推測で答えない</td>
+                <td>自治体の事務、事業者内の進捗は、自治体・事業者へ確認するようご案内する</td>
+              </tr>
+              <tr>
+                <td><span class="badge-ng">NG</span> 他社の批判をしない</td>
+                <td>他社ポータル・各事業者・自治体について、評価や批判は述べない</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="subsection">
+        <h3>4-5. 迷惑行為・暴言への対応 <span class="badge-proposal">【提案】</span></h3>
+        <div class="card">
+          <p>利用規約第11条は、虚偽情報の入力、誹謗中傷、業務妨害などを禁止しています。</p>
+          <div class="step-flow">
+            <div class="step-item">
+              <span class="step-badge">1回目</span>
+              <span>穏やかに「ご用件の内容に沿ってご案内させてください」と伝える</span>
+            </div>
+            <div class="step-item">
+              <span class="step-badge">2回目</span>
+              <span>SVに交代を依頼する</span>
+            </div>
+            <div class="step-item">
+              <span class="step-badge">3回目</span>
+              <span>SV判断で「このまま続く場合は通話を終了します」と予告し、改善がなければ終了する</span>
+            </div>
+          </div>
+          <div class="alert alert-danger mt">
+            脅迫・反社会的勢力が疑われる場合は、その場でSVへ。利用停止・解約は当社が判断します（規約第12条）。コンシェルジュが自己判断で伝えないこと。
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. オペレーション -->
+    <section id="section-5" class="section">
+      <div class="section-header">
+        <div class="section-number">5</div>
+        <h2>オペレーション</h2>
+      </div>
+
+      <div class="subsection">
+        <h3>5-1. 共通の応対フロー</h3>
+        <div class="card">
+          <div class="flow horizontal">
+            <div class="flow-step-h">受電・名乗り</div>
+            <div class="flow-arrow-h">→</div>
+            <div class="flow-step-h">本人確認（2項目）</div>
+            <div class="flow-arrow-h">→</div>
+            <div class="flow-step-h">用件確認・区分判定</div>
+            <div class="flow-arrow-h">→</div>
+            <div class="flow-step-h">対応・案内</div>
+            <div class="flow-arrow-h">→</div>
+            <div class="flow-step-h">復唱・クロージング</div>
+            <div class="flow-arrow-h">→</div>
+            <div class="flow-step-h">履歴入力</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="subsection">
+        <h3>5-2. 問合せ区分 <span class="badge-proposal">【提案】</span></h3>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>区分</th><th>内容</th></tr></thead>
+            <tbody>
+              <tr><td><span class="badge-code">B</span></td><td>行政手続き（伴走）</td></tr>
+              <tr><td><span class="badge-code">C</span></td><td>民間手続き（電気・ガス・水道・インターネット）の取次</td></tr>
+              <tr><td><span class="badge-code">D</span></td><td>状況確認・取消・変更</td></tr>
+              <tr><td><span class="badge-code">E</span></td><td>トークスクリプト（付録E）</td></tr>
+              <tr><td><span class="badge-code">F</span></td><td>自治体・関係会社からの連絡</td></tr>
+              <tr><td><span class="badge-code">H</span></td><td>利用できない場合の案内</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="subsection">
+        <h3>5-3. 行政手続きの伴走（B・E）</h3>
+        <div class="card">
+          <h4>① 前提チェック（4点）</h4>
+          <p>「マイナンバーカード」「署名用電子証明書のパスワード」「xIDアプリ（インストール・登録済み）」「NFC対応のスマートフォン」が手元にそろっているかを確認します。欠けるものがあれば下表で対処します。</p>
+
+          <h4 class="mt">② 申請の進め方</h4>
+          <p>画面の順番は以下のとおりです。今どの画面にいるかをお客様に読み上げてもらい、つまずいた箇所を特定します。</p>
+          <div class="flow horizontal wrap">
+            <div class="flow-step-h admin">注意事項の確認</div>
+            <div class="flow-arrow-h">→</div>
+            <div class="flow-step-h admin">フェーズ(1)<br>引越し日・住所</div>
+            <div class="flow-arrow-h">→</div>
+            <div class="flow-step-h admin">フェーズ(2)<br>引越し対象者</div>
+            <div class="flow-arrow-h">→</div>
+            <div class="flow-step-h admin">フェーズ(3)<br>来庁予定日</div>
+            <div class="flow-arrow-h">→</div>
+            <div class="flow-step-h admin">フェーズ(4)<br>入力内容の確認</div>
+            <div class="flow-arrow-h">→</div>
+            <div class="flow-step-h admin">マイナンバーカード<br>本人確認（xID連携）</div>
+            <div class="flow-arrow-h">→</div>
+            <div class="flow-step-h admin">フェーズ(5)<br>電子署名</div>
+            <div class="flow-arrow-h">→</div>
+            <div class="flow-step-h important">送信</div>
+          </div>
+
+          <h4 class="mt">④ 申請後の案内（必ず伝える4点）</h4>
+          <div class="must-four">
+            <div class="must-item">
+              <div class="must-num">1</div>
+              <div>転出届はWebで完結する（一部を除き来庁不要）。転入届・転居届は必ず来庁が必要</div>
+            </div>
+            <div class="must-item">
+              <div class="must-num">2</div>
+              <div>自治体の処理状況は申請状況照会画面で確認する。<strong>更新のお知らせメールは届かない</strong></div>
+            </div>
+            <div class="must-item">
+              <div class="must-num">3</div>
+              <div>転出元の処理が「完了」になってから来庁する。処理前や来庁予定日より前に行くと、手続きできない・時間がかかることがある</div>
+            </div>
+            <div class="must-item">
+              <div class="must-num">4</div>
+              <div>来庁は引越し日から<strong>14日以内</strong>。引越す方全員のマイナンバーカードを持参する。転出届受理後は引越し日からカードの署名用電子証明書が失効するため、転入先窓口で更新を依頼する</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="subsection">
+        <h3>5-4. 民間手続きの取次（C）</h3>
+        <div class="card">
+          <h4>① 基本の流れ</h4>
+          <div class="step-flow">
+            <div class="step-item civil">
+              <span class="step-badge civil">1</span>
+              <span>お客様がWebで引越し情報と希望する手続き（電気・ガス・水道・インターネット）を申込む</span>
+            </div>
+            <div class="step-item civil">
+              <span class="step-badge civil">2</span>
+              <span>コンシェルジュが申込情報を確認し、電話でお伺いしながら事業者へ手続き（取次）する</span>
+            </div>
+            <div class="step-item civil">
+              <span class="step-badge civil">3</span>
+              <span>事業者からお客様へ、完了通知・申請の不備連絡・開栓の立会い日程などの連絡が届く</span>
+            </div>
+            <div class="step-item civil">
+              <span class="step-badge civil">4</span>
+              <span>事業者に引き渡した後の進捗は、各事業者へ確認していただく</span>
+            </div>
+          </div>
+          <div class="alert alert-warning mt">
+            <span class="badge-check">【要確認】</span> 資料には「申込情報をもとに電話で手続き」とあるのみで、コンシェルジュからの架電か、お客様からの受電か、架電の時間帯・リトライ回数が未定です。
+          </div>
+
+          <h4 class="mt">③ 案内時の注意</h4>
+          <ul class="bullet-list">
+            <li>契約者は申請者ご本人のみ。ご家族が契約者の場合や、同居家族を契約者にする場合は、事業者へ直接連絡していただく</li>
+            <li>標準的な処理期間は事業者により異なり、およそ<strong>2〜5営業日</strong>。不備があれば長くなる。<span class="badge-check">【要確認】</span> FAQの別項目には「3〜10営業日」の記載あり</li>
+            <li>引越し直前の場合は、各事業者へ直接問い合わせていただく</li>
+            <li>受理・開通の可否や時期は事業者の判断で、当社は保証しない（規約第3条）</li>
+            <li>新規契約が成立すると、各事業者のサービス利用料等が発生する場合がある</li>
+            <li>プラン比較は、事実に基づく情報提供にとどめる（規約第3条）</li>
+          </ul>
+
+          <h4 class="mt">④ 変更・取消</h4>
+          <ul class="bullet-list">
+            <li>引越し日・住所などの変更、取消は、お客様から当窓口へお電話いただき、コンシェルジュが事業者へ確認する</li>
+            <li>事業者が申請を受け取った後は、窓口側で取消できない場合がある。その場合は事業者へ直接連絡していただく</li>
+            <li>自治体申請の取消と事業者申請の取消は連動しない。それぞれ別に行う</li>
+          </ul>
+
+          <h4 class="mt">⑤ 連絡がつかない場合 <span class="badge-proposal">【提案】</span></h4>
+          <ul class="bullet-list">
+            <li>時間帯を変えて最大3回架電し、不在メッセージとメールを送る</li>
+            <li>当社からの連絡に<strong>30日間</strong>応答がない場合、規約上は契約解除の対象となる（第12条）。解除の判断はSVが行う</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="subsection">
+        <h3>5-5. 状況確認・取消・変更（D）</h3>
+        <div class="card">
+          <h4>① 状況の確認方法</h4>
+          <p>「引越しやることリスト」の「転出届・転入予約」メニューから、申請状況照会画面（BizMINT）へ進みます。</p>
+          <div class="status-cards">
+            <div class="status-card processing">
+              <div class="status-label">処理中</div>
+              <div>自治体で手続き中。転出元・転入先の自治体が更新する</div>
+            </div>
+            <div class="status-card done">
+              <div class="status-label">完了</div>
+              <div>転入先自治体へ来庁できる状態</div>
+            </div>
+          </div>
+          <ul class="bullet-list mt">
+            <li>自治体が登録したコメントも同画面に表示される</li>
+            <li>自治体の更新時に通知メールは届かない。お客様が都度、画面を確認する</li>
+            <li>処理状況に関するお問合せは自治体へ。画面が表示されない・使えない場合は当窓口が対応する</li>
+          </ul>
+
+          <h4 class="mt">② 自治体申請の取消手順（4ステップ）</h4>
+          <div class="step-flow">
+            <div class="step-item">
+              <span class="step-badge">Step 1</span>
+              <span>申請状況照会トップ画面で、自治体向け申請の照会画面へ進み、取消する申請を選ぶ</span>
+            </div>
+            <div class="step-item">
+              <span class="step-badge">Step 2</span>
+              <span>申請の詳細画面で「この申請を取り消す」を押す</span>
+            </div>
+            <div class="step-item">
+              <span class="step-badge">Step 3</span>
+              <span>取消申請画面に進み、画面の手順に従う</span>
+            </div>
+            <div class="step-item">
+              <span class="step-badge">Step 4</span>
+              <span>送信後、xIDアプリに公的個人認証（電子署名）のリクエストが届くので、アプリの案内に従う</span>
+            </div>
+          </div>
+          <p class="note">取消できたかどうかは、通常の申請と同じ申請状況照会画面で確認できます。</p>
+        </div>
+      </div>
+
+      <div class="subsection">
+        <h3>5-8. システム障害・メンテナンス時 <span class="badge-proposal">【提案】</span></h3>
+        <div class="card">
+          <ul class="bullet-list">
+            <li>お客様の状況を聞き取る：端末OS・ブラウザ・画面名・エラー文言・発生時刻</li>
+            <li>SVへ報告。複数件同時なら、L3経由でNTTデータ（BizMINT）へ切り分けを依頼</li>
+            <li>全体障害・メンテナンスの場合は、トークで状況をお伝えし、復旧後の再操作をお願いする</li>
+            <li>Webは24時間365日提供だが、SLAなしのベストエフォートで、メンテナンス等で止まることがある</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. トークスクリプト集 -->
+    <section id="section-6" class="section">
+      <div class="section-header">
+        <div class="section-number">6</div>
+        <h2>トークスクリプト集 <span class="badge-proposal">【提案】</span></h2>
+      </div>
+      <div class="card">
+        <p>資料の内容をもとに作成した例文です。「〇〇」の部分は状況に合わせて入れ替え、自分の言葉で話して構いません。<strong>内容（できる・できない、日付、数字）は変えないでください。</strong></p>
+      </div>
+
+      <div class="subsection">
+        <h3>6-1. 開始・終了</h3>
+        <div class="script-list">
+          <div class="script-item">
+            <div class="script-label">受電（名乗り）</div>
+            <div class="script-text">「お電話ありがとうございます。引越し手続き窓口、〇〇がうけたまわります。」</div>
+          </div>
+          <div class="script-item">
+            <div class="script-label">発信（民間手続きのお電話）</div>
+            <div class="script-text">「お世話になっております。引越し手続き窓口の〇〇と申します。〇月〇日にWebサイトからお申込みいただいた、電気・ガスなどの引越しのお手続きの件でお電話しました。〇〇様ご本人でいらっしゃいますか。今、5分ほどお時間よろしいでしょうか。」</div>
+          </div>
+          <div class="script-item">
+            <div class="script-label">不在時のメッセージ</div>
+            <div class="script-text warn">「引越し手続き窓口の〇〇です。お申込みいただいたお手続きの件でお電話しました。改めてお電話いたします。お急ぎの場合は、〇時から〇時の間に、〇〇〇〇（番号）までお願いいたします。」<br><small class="note">※個人情報・手続き内容には触れない</small></div>
+          </div>
+          <div class="script-item">
+            <div class="script-label">クロージング</div>
+            <div class="script-text">「本日のご案内は以上です。次は、〇〇をお願いいたします。他にご不明な点はございませんか。お引越し、どうぞお気をつけて。ご利用ありがとうございました。」</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="subsection">
+        <h3>6-2. 本人確認・個人情報</h3>
+        <div class="script-list">
+          <div class="script-item">
+            <div class="script-label">本人確認</div>
+            <div class="script-text">「ご本人確認のため、お名前のフリガナと、マイページに登録されたメールアドレスをお伺いできますか。」</div>
+          </div>
+          <div class="script-item">
+            <div class="script-label">パスワード等を伝えられたとき</div>
+            <div class="script-text warn">「恐れ入ります。パスワードや暗証番号は、当窓口ではお伺いしておりません。お客様ご自身の画面でのみ入力してください。」</div>
+          </div>
+          <div class="script-item">
+            <div class="script-label">マイナンバーを伝えられたとき</div>
+            <div class="script-text warn">「当サービスでは、マイナンバーは取得しておりません。」</div>
+          </div>
+          <div class="script-item">
+            <div class="script-label">ご家族からの電話</div>
+            <div class="script-text">「恐れ入ります。お手続きや登録内容のご案内は、お申込みのご本人様のみとなっております。サービスの一般的な使い方でしたら、ご案内できます。」</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="subsection">
+        <h3>6-3. 待たせるとき・確認するとき</h3>
+        <div class="script-list">
+          <div class="script-item">
+            <div class="script-text">「確認いたしますので、〇分ほどお待ちいただけますか。」</div>
+          </div>
+          <div class="script-item">
+            <div class="script-text">「お待たせいたしました。確認できました。」</div>
+          </div>
+          <div class="script-item">
+            <div class="script-text">「念のため復唱します。引越し日は〇月〇日、お引越し先は〇〇市〇〇区。相違ございませんか。」</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="subsection">
+        <h3>6-4. 場面別トーク</h3>
+        <div class="script-list">
+          <div class="script-item">
+            <div class="script-label">① 何から始めればいいか分からない</div>
+            <div class="script-text">「ご安心ください。まず、いつ、どちらからどちらへお引越しか教えていただけますか。そのうえで、必要な手続きを順番に、一緒に確認してまいります。」</div>
+          </div>
+          <div class="script-item">
+            <div class="script-label">② Webの操作が苦手</div>
+            <div class="script-text">「ゆっくり進めましょう。私がお電話で、画面の見方を一つずつご案内します。いま、スマートフォンの画面には何と表示されていますか。」</div>
+          </div>
+          <div class="script-item">
+            <div class="script-label">③ マイナンバーカードがない</div>
+            <div class="script-text warn">「申し訳ございません。本サービスは、マイナンバーカードでの本人確認が必須のため、お持ちでない場合はご利用いただけません。お手数ですが、新しい住所の自治体の窓口で手続きをお願いいたします。」</div>
+          </div>
+          <div class="script-item">
+            <div class="script-label">④ 署名用パスワードがロックされた</div>
+            <div class="script-text">「署名用のパスワードは、5回続けて間違えると安全のためロックされます。お住まいの市区町村の窓口で再設定できます。利用者証明用の数字4桁を覚えていらっしゃれば、スマートフォンのアプリとコンビニの端末でも初期化できます。ご案内のURLをお伝えしましょうか。」</div>
+          </div>
+          <div class="script-item">
+            <div class="script-label">⑤ ご家族が代わりに申請したい</div>
+            <div class="script-text warn">「恐れ入ります。行政への申請は、引越しをされるご本人でないとできません。一緒に引越しをされるご家族の分は、ご本人からまとめて申請いただけます。」</div>
+          </div>
+          <div class="script-item">
+            <div class="script-label">⑥ 申請のステータスが変わらない</div>
+            <div class="script-text">「申請の状況は、自治体の職員の方が更新しています。『処理中』は、自治体で手続きが進んでいるという意味です。更新のお知らせメールは届かないため、ときどき画面をご確認いただき、『完了』になってからご来庁ください。」</div>
+          </div>
+          <div class="script-item">
+            <div class="script-label">⑦ 「役所に行かなくていいと思っていた」</div>
+            <div class="script-text">「ご案内が分かりにくく、申し訳ございません。転出届はWebで完結しますが、転入届は新しい住所の自治体の窓口へ来庁していただく決まりです。事前に転出届を済ませておくことで、窓口では転入届の手続きに進めます。」</div>
+          </div>
+          <div class="script-item">
+            <div class="script-label">⑧ 電気・ガスなどの進捗を聞かれた</div>
+            <div class="script-text">「お申込みの内容は、〇月〇日に〇〇へお渡ししています。それ以降の進捗は事業者が管理しておりますので、お手数ですが〇〇へ直接お問合せください。連絡先はマイページの手続き先に記載がございます。」</div>
+          </div>
+          <div class="script-item">
+            <div class="script-label">⑨ 完了時期の約束を求められた</div>
+            <div class="script-text warn">「申し訳ございません。完了の時期は事業者の処理状況によるため、お約束することができません。標準的にはおよそ2〜5営業日です。お急ぎでしたら、事業者へ直接お問合せいただくのが確実です。」</div>
+          </div>
+          <div class="script-item">
+            <div class="script-label">⑩ できないことを断るとき</div>
+            <div class="script-text">「申し訳ございません。〇〇は当窓口では承ることができかねます。代わりに、〇〇でしたらご案内できます。」<br><small class="note">型：クッション言葉＋代替案</small></div>
+          </div>
+          <div class="script-item">
+            <div class="script-label">⑪ 分からないとき（推測で答えない）</div>
+            <div class="script-text warn">「正確にご案内するため、確認してから改めてご連絡してもよろしいでしょうか。〇時までにお電話いたします。」</div>
+          </div>
+          <div class="script-item">
+            <div class="script-label">⑫ 他社ポータルについて聞かれた</div>
+            <div class="script-text">「そちらは別の会社のサービスですので、当窓口では詳しい操作をご案内できません。運営会社のサイトでご確認いただけますか。運営会社名はお伝えできます。」</div>
+          </div>
+          <div class="script-item">
+            <div class="script-label">⑬ 公的サービスかと聞かれた</div>
+            <div class="script-text">「当サービスは、民間企業のWizが運営しています。自治体への申請は、マイナポータルと同じ仕組みで自治体に届けられます。」</div>
+          </div>
+          <div class="script-item">
+            <div class="script-label">⑭ 個人情報の削除を求められた</div>
+            <div class="script-text">「承知いたしました。ご本人確認のうえ、担当部署で手続きいたします。担当より改めてご連絡します。」<br><small class="note"><span class="badge-check">【要確認】</span> 手続き方法・回答期限は未定</small></div>
+          </div>
+          <div class="script-item">
+            <div class="script-label">⑮ 自治体職員からの電話</div>
+            <div class="script-text">「お世話になっております。お問合せありがとうございます。ご所属とお名前、折返しのご連絡先をお伺いできますか。内容を確認し、担当より折り返します。」</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7. CS・クレーム対応 -->
+    <section id="section-7" class="section">
+      <div class="section-header">
+        <div class="section-number">7</div>
+        <h2>CS（顧客満足）とクレーム対応</h2>
+      </div>
+
+      <div class="subsection">
+        <h3>7-1. CSの考え方</h3>
+        <div class="card">
+          <p>引越しは、ただでさえ忙しく不安の多い時期です。当サービスは「Webだけでは不安な人を取り残さない」ことを約束にしているため、<strong>『電話してよかった』</strong>と思っていただくことが成功の基準です。</p>
+          <div class="three-pillars mt">
+            <div class="pillar">
+              <div class="pillar-icon">✅</div>
+              <div class="pillar-title">正確さ</div>
+              <div class="pillar-desc">できる・できないを、正しく、はっきり伝える</div>
+            </div>
+            <div class="pillar">
+              <div class="pillar-icon">🤝</div>
+              <div class="pillar-title">寄り添い</div>
+              <div class="pillar-desc">操作に迷う方を急かさず、完了まで伴走する</div>
+            </div>
+            <div class="pillar">
+              <div class="pillar-icon">🔮</div>
+              <div class="pillar-title">先回り</div>
+              <div class="pillar-desc">来庁が必要なこと、ステータス確認など、つまずきやすい点は聞かれる前に伝える</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="subsection">
+        <h3>7-2. クレーム対応の5ステップ</h3>
+        <div class="card">
+          <div class="step-flow">
+            <div class="step-item">
+              <span class="step-badge">Step 1</span>
+              <span><strong>傾聴</strong>：最後まで遮らずに聞く</span>
+            </div>
+            <div class="step-item">
+              <span class="step-badge">Step 2</span>
+              <span><strong>共感・お詫び</strong>：「ご不便をおかけして申し訳ございません」「お急ぎのところ、ご心配ですよね」。原因が当社かどうか確定する前でも、お気持ちへのお詫びはする</span>
+            </div>
+            <div class="step-item">
+              <span class="step-badge">Step 3</span>
+              <span><strong>事実確認</strong>：いつ・何を・どこまで行ったかを確認する</span>
+            </div>
+            <div class="step-item">
+              <span class="step-badge">Step 4</span>
+              <span><strong>解決策・代替案</strong>：できることを先に伝え、できないことは理由とあわせて伝える</span>
+            </div>
+            <div class="step-item">
+              <span class="step-badge">Step 5</span>
+              <span><strong>記録・共有</strong>：履歴に「不満あり」を記録し、SVへ報告。必要ならSVへ引継ぐ</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="subsection">
+        <h3>7-4. 応対品質チェック項目 <span class="badge-proposal">【提案】</span></h3>
+        <div class="card">
+          <p>各5点満点で評価し、月1回、SVが録音（または同席）で確認します。</p>
+          <div class="checklist">
+            <label><input type="checkbox"> 名乗り・挨拶、声のトーン、スピード</label>
+            <label><input type="checkbox"> 聞き取り（用件、現在地）、復唱</label>
+            <label><input type="checkbox"> 本人確認の実施</label>
+            <label><input type="checkbox"> 案内の正確さ（できる・できないの区別、数字・日付）</label>
+            <label><input type="checkbox"> NG表現がない（断定・保証、推測、他社批判）</label>
+            <label><input type="checkbox"> 共感・クッション言葉</label>
+            <label><input type="checkbox"> 次の行動の明示、クロージング</label>
+            <label><input type="checkbox"> 履歴の正確さ・速さ</label>
+          </div>
+        </div>
+      </div>
+
+      <div class="subsection">
+        <h3>7-5. KPI案 <span class="badge-proposal">【提案】</span></h3>
+        <div class="card">
+          <p class="note">目標値はリリース後1か月の実績を見てから設定します。</p>
+          <div class="kpi-grid">
+            <div class="kpi-card"><div class="kpi-name">応答率</div><div class="kpi-desc">着信に対して応答できた割合</div></div>
+            <div class="kpi-card"><div class="kpi-name">一次解決率</div><div class="kpi-desc">1回の電話で完結した割合</div></div>
+            <div class="kpi-card"><div class="kpi-name">AHT</div><div class="kpi-desc">平均処理時間</div></div>
+            <div class="kpi-card"><div class="kpi-name">伴走完了率</div><div class="kpi-desc">伴走した方のうち、申請送信まで至った割合</div></div>
+            <div class="kpi-card"><div class="kpi-name">再架電率</div><div class="kpi-desc">同じ内容で再度かかってきた割合</div></div>
+            <div class="kpi-card"><div class="kpi-name">CSAT</div><div class="kpi-desc">通話後アンケートなどの満足度</div></div>
+            <div class="kpi-card"><div class="kpi-name">クレーム件数</div><div class="kpi-desc">エスカレ率</div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 8. Q&A集 -->
+    <section id="section-8" class="section">
+      <div class="section-header">
+        <div class="section-number">8</div>
+        <h2>Q&amp;A集（コンシェルジュ用）</h2>
+      </div>
+      <div class="card">
+        <p>添付FAQを「引越し手続き窓口」向けに読み替え、電話で話しやすい長さにまとめました。<span class="badge-check">【要確認】</span>の回答は、当サービスの実画面で仕様を確認のうえ確定してください。</p>
+      </div>
+
+      <!-- A. サービス全般 -->
+      <div class="subsection">
+        <h3>A. サービス全般</h3>
+        <div class="qa-list">
+          <details class="qa-item">
+            <summary class="qa-q">「引越し手続き窓口」はどんなサービスですか？</summary>
+            <div class="qa-a">自治体への引越しの申請（転出届・転入予定連絡など）と、電気・ガス・水道・インターネットなどの手続きを、まとめて行えるサービスです。Webでの手続きに加えて、専門のコンシェルジュが電話でサポートします。</div>
+          </details>
+          <details class="qa-item">
+            <summary class="qa-q">どんな申請ができますか？</summary>
+            <div class="qa-a">自治体向けは「転出届／転入予定連絡」「転居予定連絡」と、それぞれの取消です。民間向けは、電気・ガスの開始／停止、水道、インターネット回線の移転・新規です。転出届はWebで完結しますが、転入予定連絡・転居予定連絡の後は、自治体の窓口で転入届・転居届の手続きが必要です。</div>
+          </details>
+          <details class="qa-item">
+            <summary class="qa-q">無料ですか？</summary>
+            <div class="qa-a">当サービスは無料です。ただし電気・ガスなどの事業者と新規契約をされた場合は、契約成立後に各事業者のサービス利用料等が発生することがあります。端末や通信料はお客様のご負担です。</div>
+          </details>
+          <details class="qa-item">
+            <summary class="qa-q">運営会社を教えてください。</summary>
+            <div class="qa-a">株式会社Wizです。会社情報は <a href="https://012grp.co.jp/" target="_blank" rel="noopener">012grp.co.jp</a> をご覧ください。</div>
+          </details>
+          <details class="qa-item">
+            <summary class="qa-q">他の引越しポータル（Smyb、引越れんらく帳、ペンリィ）との違いは？</summary>
+            <div class="qa-a">いずれも、自治体と事業者への申請をまとめて行えるサービスです。当サービスは、専門コンシェルジュが電話で、インフラ事業者への手続きを取り次ぎ、行政のWeb申請も操作を伴走する点が特徴です。自治体への申請データは、どのサービスでもマイナポータルと同じ内容で届きます。</div>
+          </details>
+          <details class="qa-item">
+            <summary class="qa-q">いつ使えばよいですか？</summary>
+            <div class="qa-a">引越し日が決まったら、できるだけ早く申請してください。転入（転居）届は、引越し日から14日以内に新しい住所の自治体へ来庁して出す必要があります。民間の手続きは、事業者での処理に日数がかかるため、余裕をもってお申込みください。</div>
+          </details>
+          <details class="qa-item">
+            <summary class="qa-q">24時間使えますか？</summary>
+            <div class="qa-a">Webサイトは基本的に24時間ご利用いただけますが、メンテナンス等でご利用いただけない時間帯があります。電話対応は10:00〜19:00です。<span class="badge-check">【要確認】</span> 対応曜日・年末年始の扱い</div>
+          </details>
+          <details class="qa-item">
+            <summary class="qa-q">引越し先がまだ決まっていません。</summary>
+            <div class="qa-a">申請には引越し先のご住所が必要です。決まってからご利用ください。</div>
+          </details>
+          <details class="qa-item">
+            <summary class="qa-q">手続きが完了するまでの期間は？</summary>
+            <div class="qa-a">自治体は、オンライン申請だけでは完了しません。転出元で転出届の処理が完了したことを確認して、新しい住所の自治体に来庁し、転入届（転居届）を出すと完了です。事業者は、およそ2〜5営業日が標準で、不備があるとさらにかかります。</div>
+          </details>
+          <details class="qa-item">
+            <summary class="qa-q">なぜ申請したのに来庁が必要なのですか？</summary>
+            <div class="qa-a">転入（転居）届は、新しい住所の自治体の窓口で提出することが決まっているためです。</div>
+          </details>
+        </div>
+      </div>
+
+      <!-- B. 利用条件 -->
+      <div class="subsection">
+        <h3>B. 利用条件</h3>
+        <div class="qa-list">
+          <details class="qa-item">
+            <summary class="qa-q">家族みんなが、それぞれ申請する必要がありますか？</summary>
+            <div class="qa-a">いいえ。引越しをされるご本人が、一緒に引越すご家族の分もまとめて申請できます。</div>
+          </details>
+          <details class="qa-item">
+            <summary class="qa-q">親が、子どもの代わりに申請できますか？（自治体）</summary>
+            <div class="qa-a">引越しをしない方は、引越しをする方の代理で申請できません。たとえば、お子さんだけが引越す場合、親御さんが代わりに申請することはできません。</div>
+          </details>
+          <details class="qa-item">
+            <summary class="qa-q">海外への引越し、海外からの引越しにも使えますか？</summary>
+            <div class="qa-a">ご利用いただけません。</div>
+          </details>
+          <details class="qa-item">
+            <summary class="qa-q">家族が21人以上でも申請できますか？</summary>
+            <div class="qa-a">住民票を共にする方が21人以上の場合は、本サービスで申請できません。自治体の窓口で手続きをお願いします。</div>
+          </details>
+          <details class="qa-item">
+            <summary class="qa-q">マイナンバーカードがなくても使えますか？</summary>
+            <div class="qa-a">ご利用いただけません。</div>
+          </details>
+        </div>
+      </div>
+
+      <!-- C. 本人確認と個人情報 -->
+      <div class="subsection">
+        <h3>C. 本人確認と個人情報</h3>
+        <div class="qa-list">
+          <details class="qa-item">
+            <summary class="qa-q">なぜマイナンバーカードが必要ですか？</summary>
+            <div class="qa-a">ご本人の本人確認のためです。なりすまし申請を防ぎます。また、自治体への申請では、カードの署名用電子証明書による電子署名が必要です。</div>
+          </details>
+          <details class="qa-item">
+            <summary class="qa-q">12桁のマイナンバーが電気会社や銀行に送られますか？</summary>
+            <div class="qa-a">当サービスはマイナンバーを取得しません。カードに登録された氏名・住所・性別・生年月日と、フォームで入力された情報を、選択された自治体・事業者へ連携します。</div>
+          </details>
+          <details class="qa-item">
+            <summary class="qa-q">個人情報の取扱いは？ 第三者に渡りますか？</summary>
+            <div class="qa-a">ご本人の同意に基づき、個人情報を含む申請データを、お客様が選んだ自治体・事業者にのみ連携します。第三者に渡ることはありません。ご本人からのご請求があれば、個人情報を削除します。</div>
+          </details>
+        </div>
+      </div>
+
+      <!-- D. マイナンバーカード -->
+      <div class="subsection">
+        <h3>D. マイナンバーカード</h3>
+        <div class="qa-list">
+          <details class="qa-item">
+            <summary class="qa-q">署名用電子証明書のパスワードとは？</summary>
+            <div class="qa-a">自治体の窓口でカードを受け取るときに設定した、英数字が混ざった6〜16文字のパスワードです。</div>
+          </details>
+          <details class="qa-item">
+            <summary class="qa-q">署名用パスワードを忘れた／ロックされた。</summary>
+            <div class="qa-a">5回続けて間違えるとロックされます。お住まいの自治体の窓口で再設定をお願いします。利用者証明用の数字4桁を覚えていれば、スマートフォンのアプリとコンビニ端末でも初期化できます。</div>
+          </details>
+          <details class="qa-item">
+            <summary class="qa-q">全員分のマイナンバーカードが必要ですか？</summary>
+            <div class="qa-a">申請のときは、申請者ご本人のカードだけで大丈夫です。来庁して転入届・転居届を出すときは、引越しされる方全員のカードが必要です。</div>
+          </details>
+          <details class="qa-item">
+            <summary class="qa-q">転出届を出したら、引越し日からカードが使えなくなりました。</summary>
+            <div class="qa-a">転出届が受理されると、引越し日にカードの署名用電子証明書が失効します。転入先の窓口で転入届を出すときに、あわせて更新してください。</div>
+          </details>
+        </div>
+      </div>
+
+      <!-- E. xID -->
+      <div class="subsection">
+        <h3>E. xID</h3>
+        <div class="qa-list">
+          <details class="qa-item">
+            <summary class="qa-q">xIDとは？</summary>
+            <div class="qa-a">マイナンバーカードと連携して、本人確認・電子署名などが手軽にできる、xID株式会社のデジタルIDアプリです（<a href="https://x-id.me/" target="_blank" rel="noopener">x-id.me</a>）。当サービスは、マイナンバーの収集・事業者への提供は行いません。</div>
+          </details>
+          <details class="qa-item">
+            <summary class="qa-q">xIDアプリはどこで入手しますか？</summary>
+            <div class="qa-a">App Store または Google Play からインストールしてください。</div>
+          </details>
+          <details class="qa-item">
+            <summary class="qa-q">xIDのPINを忘れました。</summary>
+            <div class="qa-a">再設定の方法は、xIDヘルプセンターをご覧ください。xIDアプリの操作のお問合せは、xID株式会社の窓口（平日10:00〜17:00）が対応します。</div>
+          </details>
+          <details class="qa-item">
+            <summary class="qa-q">署名の確認コードが表示されません。</summary>
+            <div class="qa-a"><span class="badge-check">【要確認】</span> 他社ポータルでは、xIDアプリを入れたスマートフォンで申請画面を開いていると、確認コードの選択手順が省略されます。当サービスの画面の動きは未確認のため、状況を聞き取りSVへ。</div>
+          </details>
+        </div>
+      </div>
+
+      <!-- F. 申請フォーム・操作 -->
+      <div class="subsection">
+        <h3>F. 申請フォーム・操作</h3>
+        <div class="qa-list">
+          <details class="qa-item">
+            <summary class="qa-q">来庁予定日に選べる日がありません。</summary>
+            <div class="qa-a">選べない日でも開庁している庁舎があることがあるため、自治体のホームページで開庁日をご確認ください。申請時の来庁予定日に関わらず、引越し日から14日以内の開庁日ならいつでも来庁できます。ただし、必ず転出元で転出届の処理が完了していることを確認してからお越しください。</div>
+          </details>
+          <details class="qa-item">
+            <summary class="qa-q">入力した内容が間違っていました。</summary>
+            <div class="qa-a">自治体・事業者で手続きが正しく進まないことがあります。申請を取り消して、もう一度申請するか、申請先へ直接お問合せください。</div>
+          </details>
+          <details class="qa-item">
+            <summary class="qa-q">「操作がタイムアウトになりました」と表示されます。</summary>
+            <div class="qa-a"><span class="badge-check">【要確認】</span> 他社ポータルでは、30分以上操作しないとタイムアウトとなり、入力途中の内容は一時保存されて、トップページから再開できます。当サービスの仕様は未確認のため、確認後に記載します。それまでは、状況を聞き取りSVへ。</div>
+          </details>
+        </div>
+      </div>
+
+      <!-- G. 申請状況の確認 -->
+      <div class="subsection">
+        <h3>G. 申請状況の確認</h3>
+        <div class="qa-list">
+          <details class="qa-item">
+            <summary class="qa-q">申請後のステータスはどう確認しますか？</summary>
+            <div class="qa-a">「引越しやることリスト」の「転出届・転入予約」メニューから、申請状況照会画面へ進んでください。自治体の処理状況（ステータス）と、自治体からのコメントを確認できます。</div>
+          </details>
+          <details class="qa-item">
+            <summary class="qa-q">ステータスがずっと変わりません。</summary>
+            <div class="qa-a">「処理中」は、自治体で手続き中ということです。ステータスは転出元・転入先の自治体が更新します。不明な点は申請先の自治体へお問合せください。</div>
+          </details>
+          <details class="qa-item">
+            <summary class="qa-q">手続きが完了したら、メールなどで知らせてもらえますか？</summary>
+            <div class="qa-a">自治体の場合は、完了時にメールは届きません。申請状況照会画面でご確認ください。事業者の場合は、事業者ごとに連絡の方法が異なります。</div>
+          </details>
+        </div>
+      </div>
+
+      <!-- H. 来庁 -->
+      <div class="subsection">
+        <h3>H. 来庁</h3>
+        <div class="qa-list">
+          <details class="qa-item">
+            <summary class="qa-q">申請すれば、役所へ行かなくて済みますか？</summary>
+            <div class="qa-a">転入届（転居届）のための来庁は必ず必要です。転出届は、一部の場合を除いて、転出元の自治体への来庁は不要です。</div>
+          </details>
+          <details class="qa-item">
+            <summary class="qa-q">来庁予定日より早く／遅く行きたい。</summary>
+            <div class="qa-a">引越し日から14日以内の希望する開庁日に来庁できます。必ず、転出元で転出届の処理が完了していることを確認してからお越しください。</div>
+          </details>
+          <details class="qa-item">
+            <summary class="qa-q">来庁のとき、何を持っていけばいいですか？</summary>
+            <div class="qa-a">引越しされる方全員のマイナンバーカードをお持ちください。そのほかの持ち物は、自治体のホームページでご確認ください。</div>
+          </details>
+        </div>
+      </div>
+
+      <!-- I. 申請後の変更・取消 -->
+      <div class="subsection">
+        <h3>I. 申請後の変更・取消</h3>
+        <div class="qa-list">
+          <details class="qa-item">
+            <summary class="qa-q">申請を取り消したいです。</summary>
+            <div class="qa-a">手順は5-5②のとおりです。取消の状況は、通常の申請と同じ、申請状況照会画面（「転出届・転入予約」メニュー）で確認できます。自治体向けと事業者向けの取消は連動しません。</div>
+          </details>
+          <details class="qa-item">
+            <summary class="qa-q">引越し日／引越し先／引越す人が変わりました。</summary>
+            <div class="qa-a">送信後の変更はできません。5-5③の表に沿ってご案内してください。</div>
+          </details>
+        </div>
+      </div>
+
+      <!-- J. 電話サポート・民間手続き -->
+      <div class="subsection">
+        <h3>J. 電話サポート・民間手続き</h3>
+        <div class="qa-list">
+          <details class="qa-item">
+            <summary class="qa-q">電話サポートでは何をしてもらえますか？</summary>
+            <div class="qa-a">電気・ガス・水道・インターネットは、Webの申込内容をもとに、コンシェルジュがお電話でお伺いしながら手続きします。自治体へのWeb申請は、お客様ご自身で行っていただきますが、操作の手順をお電話でご案内します。</div>
+          </details>
+          <details class="qa-item">
+            <summary class="qa-q">電気・ガスなどの手続きは、どのくらいで終わりますか？</summary>
+            <div class="qa-a">事業者によって異なりますが、およそ2〜5営業日が標準です。不備があると長くなります。お急ぎの場合は、各事業者へ直接お問合せください。<span class="badge-check">【要確認】</span> FAQの別項目に「3〜10営業日」の記載あり</div>
+          </details>
+          <details class="qa-item">
+            <summary class="qa-q">本当に開通や契約が成立しますか？</summary>
+            <div class="qa-a">受理や開通の可否、時期は事業者の判断によるため、当社からはお約束できません。</div>
+          </details>
+        </div>
+      </div>
+
+      <!-- K. 自治体向け -->
+      <div class="subsection">
+        <h3>K. 自治体向け（自治体職員からの問合せ）</h3>
+        <div class="qa-list">
+          <details class="qa-item">
+            <summary class="qa-q">NTTデータ経由の申請データは、マイナポータル経由と内容が違いますか？</summary>
+            <div class="qa-a">データ項目とその定義は、マイナポータルと同じで差分はありません。署名検証結果も、同様に申請データとともに連携します。</div>
+          </details>
+          <details class="qa-item">
+            <summary class="qa-q">申請データはどのくらいダウンロードできますか？</summary>
+            <div class="qa-a">ダウンロードできる期間は、マイナポータル申請管理の仕様で定められた期間です。NTTデータ側のサーバーには4か月保管されます。申請の再連携はできないため、ダウンロード可能期間を過ぎると、再ダウンロードはできません。</div>
+          </details>
+          <details class="qa-item">
+            <summary class="qa-q">自治体が処理状況を更新すると、申請者へ通知が届きますか？</summary>
+            <div class="qa-a">通知メールは送信されません。申請者は申請状況照会画面を開くと、その時点の処理状況とコメントが表示されます。</div>
+          </details>
+          <details class="qa-item">
+            <summary class="qa-q">このサービスで受け付けた申請は、どう見分けますか？</summary>
+            <div class="qa-a">マイナポータル申請管理の、申請データダウンロード一覧画面の「API経由」欄で確認できます。</div>
+          </details>
+          <details class="qa-item">
+            <summary class="qa-q">利用者の問合せは、どこへ案内すればよいですか？</summary>
+            <div class="qa-a">サービスの使い方、申請状況照会画面の使い方・トラブルは、引越し手続き窓口（<a href="mailto:hikkoshi-tetsuduki@012grp.co.jp">hikkoshi-tetsuduki@012grp.co.jp</a>）へご案内ください。</div>
+          </details>
+          <details class="qa-item">
+            <summary class="qa-q">他の民間ポータルとの違いは？</summary>
+            <div class="qa-a">自治体の事務の観点では、マイナポータル申請管理上の表記が異なる点以外に差異はなく、業務手順への影響はありません。当サービスの特徴は、有人コンシェルジュによるインフラ手続きのサポートです。</div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- 付録 -->
+    <section id="section-appendix" class="section">
+      <div class="section-header">
+        <div class="section-number">付</div>
+        <h2>付録</h2>
+      </div>
+
+      <div class="subsection">
+        <h3>付録A. 未確定事項・資料間の不整合（リリース前に確認）</h3>
+        <div class="alert alert-warning">
+          <strong>⚠️</strong> 付録A は別表として管理されています。本ページ内の各所に記載された <span class="badge-check">【要確認】</span> 事項を参照してください。
+        </div>
+      </div>
+
+      <div class="subsection">
+        <h3>付録B. 用語集</h3>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>用語</th><th>説明</th></tr></thead>
+            <tbody>
+              <tr><td>BizMINT</td><td>NTTデータの申請データ流通基盤。マイナポータルとの間でデータを連携する</td></tr>
+              <tr><td>xIDアプリ</td><td>マイナンバーカードを使った本人確認・電子署名を行うxID株式会社のアプリ</td></tr>
+              <tr><td>署名用電子証明書</td><td>マイナンバーカードに内蔵された証明書。転出届等の電子署名に使用。英数字6〜16文字のパスワードで保護</td></tr>
+              <tr><td>利用者証明用電子証明書</td><td>マイナンバーカードに内蔵された証明書。数字4桁のパスワードで保護</td></tr>
+              <tr><td>SV</td><td>スーパーバイザー（監督者）</td></tr>
+              <tr><td>L3</td><td>エスカレーション先の上位担当者</td></tr>
+              <tr><td>AHT</td><td>Average Handling Time（平均処理時間）</td></tr>
+              <tr><td>CSAT</td><td>Customer Satisfaction（顧客満足度）スコア</td></tr>
+              <tr><td>NFC</td><td>近距離無線通信。マイナンバーカードの読み取りに必要</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="subsection">
+        <h3>付録C. 通話履歴の入力項目 <span class="badge-proposal">【提案】</span></h3>
+        <div class="card">
+          <div class="checklist">
+            <label><input type="checkbox"> 日時</label>
+            <label><input type="checkbox"> 区分コード（5-2）</label>
+            <label><input type="checkbox"> お客様氏名</label>
+            <label><input type="checkbox"> 引越し先の自治体</label>
+            <label><input type="checkbox"> 行政・民間の別</label>
+            <label><input type="checkbox"> 問合せ要約</label>
+            <label><input type="checkbox"> 対応結果</label>
+            <label><input type="checkbox"> 次の行動（誰が・いつまでに）</label>
+            <label><input type="checkbox"> エスカレ有無（L2・L3）</label>
+            <label><input type="checkbox"> 不満の有無</label>
+            <label><input type="checkbox"> つまずきタグ（7-6）</label>
+          </div>
+        </div>
+      </div>
+
+      <div class="subsection">
+        <h3>付録D. 改訂履歴</h3>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>版</th><th>日付</th><th>内容</th></tr></thead>
+            <tbody>
+              <tr><td>v0.1</td><td>2026年10月22日</td><td>初版ドラフト作成</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- 付録E. 項目別トークスクリプト -->
+    <section id="section-E" class="section">
+      <div class="section-header">
+        <div class="section-number">E</div>
+        <h2>付録E. 項目別トークスクリプト（応対者用）<span class="badge-proposal">【提案】</span></h2>
+      </div>
+      <div class="card">
+        <p>6章の例文を、実際の通話の流れに沿って項目別に詳しくしたものです。「オペ」＝コンシェルジュ、「お客様」＝想定される返答です。〇〇は状況に合わせて入れ替えてください。<strong>パスワード・PIN・暗証番号は、どの場面でも聞きません。</strong></p>
+      </div>
+
+      <!-- E-1 -->
+      <div class="subsection">
+        <h3>E-1. 行政手続きの伴走</h3>
+        <div class="script-detailed">
+          <div class="script-subheader">E-1-1. 導入と前提確認</div>
+          <div class="dialog">
+            <div class="dialog-ope"><span class="dialog-who">オペ</span>「転出届などのお申込みですね。操作は私がお電話でご案内しますので、ご安心ください。まず、お手元に4つ、ご用意いただけますか。①マイナンバーカード、②スマートフォン、③xIDというアプリ、④カードの署名用のパスワードです。」</div>
+            <div class="dialog-ope"><span class="dialog-who">オペ</span>「パスワードは、私には教えていただかなくて大丈夫です。ご自身で入力する画面になったら、お声がけします。」</div>
+            <div class="dialog-customer"><span class="dialog-who customer">お客様</span>「xIDってなんですか」</div>
+            <div class="dialog-ope"><span class="dialog-who">オペ</span>「マイナンバーカードで本人確認をするための、専用のアプリです。入っていなければ、これからご一緒にインストールしましょう。」</div>
+            <div class="dialog-customer"><span class="dialog-who customer">お客様</span>「全部あります」</div>
+            <div class="dialog-ope"><span class="dialog-who">オペ</span>「ありがとうございます。では、スマートフォンでサイトを開いてください。今、どんな画面が出ていますか。」</div>
+          </div>
+
+          <div class="script-subheader">E-1-2. xIDアプリが入っていない</div>
+          <div class="dialog">
+            <div class="dialog-ope"><span class="dialog-who">オペ</span>「iPhoneでしょうか、Androidでしょうか。」</div>
+            <div class="dialog-ope"><span class="dialog-who">iPhone</span>「『App Store』を開いて、検索欄に『xID』と入力してください。青いアイコンのアプリが出てきたら、『入手』を押してください。」</div>
+            <div class="dialog-ope"><span class="dialog-who">Android</span>「『Playストア』を開いて、『xID』で検索してください。出てきたら『インストール』を押してください。」</div>
+            <div class="dialog-ope"><span class="dialog-who">オペ</span>「入りましたか。次はアカウントの登録です。画面の案内に沿って進めていただきます。途中で止まったら、その画面に書かれている言葉を教えてください。」</div>
+          </div>
+
+          <div class="script-subheader">E-1-3. xIDのPINを忘れた</div>
+          <div class="dialog">
+            <div class="dialog-ope"><span class="dialog-who">オペ</span>「xIDのPINは、当窓口ではお調べできません。xID社のヘルプページに、再設定の手順がございます。ご案内してもよろしいでしょうか。」</div>
+            <div class="dialog-customer"><span class="dialog-who customer">お客様</span>「教えてくれないの？」</div>
+            <div class="dialog-ope"><span class="dialog-who">オペ</span>「安全のため、PINや暗証番号は、私どもでは把握もお伺いもしていないんです。申し訳ございません。」</div>
+          </div>
+
+          <div class="script-subheader">E-1-4. カードが読み取れない</div>
+          <div class="dialog">
+            <div class="dialog-ope"><span class="dialog-who">オペ</span>「カードをスマートフォンの背面にぴったり当てて、数秒そのまま動かさないでください。ケースや手帳型カバーは外していただくと読み取りやすくなります。」</div>
+            <div class="dialog-ope"><span class="dialog-who">それでも読めない</span>「お使いの機種が対応しているか、国の一覧で確認できます。機種名を教えていただけますか。」</div>
+            <div class="dialog-ope warn"><span class="dialog-who">非対応の場合</span>「申し訳ございません。この機種では本サービスの申請ができません。対応している別のスマートフォンをお使いいただくか、自治体の窓口で手続きをお願いいたします。」</div>
+          </div>
+
+          <div class="script-subheader">E-1-5. 署名用パスワードを入力する場面</div>
+          <div class="dialog">
+            <div class="dialog-ope"><span class="dialog-who">オペ</span>「次は、署名用のパスワードを入力する画面です。私には聞こえないところで、ご自身で入力してください。入力が終わりましたら教えてください。」</div>
+            <div class="dialog-ope"><span class="dialog-who">間違えた場合</span>「パスワードは、5回続けて間違えるとロックされます。いま何回目か分からなくなったら、いったん止めてください。落ち着いて、ゆっくり入力しましょう。」</div>
+          </div>
+
+          <div class="script-subheader">E-1-6. 入力画面の案内（フェーズ(1)〜(5)）</div>
+          <div class="dialog">
+            <div class="dialog-ope"><span class="dialog-who">注意事項</span>「最初に、ご利用上の注意が表示されます。読み終わったら、下の同意のボタンを押してください。」</div>
+            <div class="dialog-ope"><span class="dialog-who">フェーズ(1)</span>「引越し日と、今の住所・新しい住所を入力します。引越し日は、実際にお引越しをする予定日で大丈夫です。」</div>
+            <div class="dialog-ope"><span class="dialog-who">フェーズ(2)</span>「一緒に引越しされるご家族はいらっしゃいますか。いらっしゃれば、同じ画面で追加できます。」</div>
+            <div class="dialog-ope"><span class="dialog-who">フェーズ(3)</span>「新しい住所の役所に行く予定日と場所を選びます。予定日は目安で、引越し日から14日以内なら、他の日でも行けます。」</div>
+            <div class="dialog-ope"><span class="dialog-who">フェーズ(4)</span>「入力内容の確認画面です。お名前、住所、日付に間違いがないか、私と一緒に読み合わせましょう。」（日付・自治体名は復唱）</div>
+            <div class="dialog-ope"><span class="dialog-who">本人確認</span>「次に、xIDのアプリが自動で開きます。画面の案内どおり、カードを読み取ってください。」</div>
+            <div class="dialog-ope"><span class="dialog-who">フェーズ(5)</span>「最後に電子署名です。印鑑の代わりに、ご本人の署名をする手続きです。署名用パスワードを入力してください。」</div>
+            <div class="dialog-ope important"><span class="dialog-who">送信完了</span>「ありがとうございます。申請が送信されました。このあと大切なご案内が4点あります。メモのご用意はよろしいですか。」</div>
+          </div>
+
+          <div class="script-subheader">E-1-7. 送信後の案内（4点）</div>
+          <div class="dialog">
+            <div class="dialog-ope important"><span class="dialog-who">オペ</span>「1点目。転出届は、これで完了までWebでできます。2点目。新しい住所の役所には、転入届を出しに、必ず行っていただきます。3点目。自治体が手続きを進めると、申請状況の画面が『完了』に変わります。この『完了』を確認してから行ってください。更新のお知らせメールは届きませんので、ときどき画面をご覧ください。4点目。行く日は、引越し日から14日以内です。引越しされる方全員のマイナンバーカードをお持ちください。」</div>
+            <div class="dialog-ope"><span class="dialog-who">復唱</span>「『完了』を確認してから、引越し日から14日以内に、全員のカードを持って行く、ということですね。」</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- E-2 -->
+      <div class="subsection">
+        <h3>E-2. 状況確認・取消・変更</h3>
+        <div class="script-detailed">
+          <div class="script-subheader">E-2-1. 申請状況の確認方法</div>
+          <div class="dialog">
+            <div class="dialog-ope"><span class="dialog-who">オペ</span>「『引越しやることリスト』を開いて、『転出届・転入予約』を押してください。申請状況の画面に進みます。今、何と表示されていますか。」</div>
+            <div class="dialog-ope"><span class="dialog-who">「処理中」</span>「自治体で手続きを進めている状態です。自治体が開庁している時間に処理されるので、少しお時間をいただくことがあります。」</div>
+            <div class="dialog-ope"><span class="dialog-who">「完了」</span>「転出届の処理が終わっています。これで、新しい住所の役所に行っていただけます。」</div>
+            <div class="dialog-customer"><span class="dialog-who customer">お客様</span>「いつ完了しますか」</div>
+            <div class="dialog-ope warn"><span class="dialog-who">オペ</span>「自治体の処理ですので、いつとはお約束できません。お急ぎでしたら、転出元の自治体へお問合せください。」</div>
+          </div>
+
+          <div class="script-subheader">E-2-2. 申請の取消</div>
+          <div class="dialog">
+            <div class="dialog-ope"><span class="dialog-who">オペ</span>「取消はこの画面からできます。ご一緒に進めますね。まず、取り消したい申請を選んでください。」</div>
+            <div class="dialog-ope"><span class="dialog-who">オペ</span>「詳細の画面で、『この申請を取り消す』を押してください。」</div>
+            <div class="dialog-ope"><span class="dialog-who">オペ</span>「最後に、xIDアプリに署名のお知らせが届きます。アプリを開いて、案内どおりに操作してください。」</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- E-3 -->
+      <div class="subsection">
+        <h3>E-3. 民間手続き（電気・ガス・水道・インターネット）</h3>
+        <div class="alert alert-info">
+          ※ヒアリング項目は暫定です。取次先事業者の仕様が決まり次第、差し替えてください（付録A #5）。
+        </div>
+        <div class="script-detailed">
+          <div class="script-subheader">E-3-1. 共通の導入</div>
+          <div class="dialog">
+            <div class="dialog-ope"><span class="dialog-who">オペ</span>「Webサイトからお申込みいただいた内容を拝見しています。〇〇様の、〇月〇日のお引越しで、電気、ガス、〇〇の手続きでお間違いないでしょうか。」</div>
+            <div class="dialog-ope"><span class="dialog-who">オペ</span>「ここからは、私がお電話で確認しながら、各社へお手続きを進めます。10分ほどかかりますが、よろしいでしょうか。」</div>
+            <div class="dialog-customer"><span class="dialog-who customer">お客様</span>「今は忙しい」</div>
+            <div class="dialog-ope"><span class="dialog-who">オペ</span>「失礼いたしました。ご都合のよい日時を教えていただけますか。その時間に改めてお電話します。」</div>
+          </div>
+
+          <div class="script-subheader">E-3-2. 共通のヒアリング</div>
+          <div class="dialog">
+            <div class="dialog-ope"><span class="dialog-who">オペ</span>「ご契約者は、〇〇様ご本人でよろしいでしょうか。」</div>
+            <div class="dialog-ope"><span class="dialog-who">オペ</span>「今のご住所と、新しいご住所を、確認のため教えていただけますか。」</div>
+            <div class="dialog-ope"><span class="dialog-who">オペ</span>「今のお住まいを出る日と、新しいお住まいに入る日は、いつでしょうか。」</div>
+            <div class="dialog-ope"><span class="dialog-who">オペ</span>「日中にご連絡のつくお電話番号と、つながりやすい時間帯はありますか。」</div>
+            <div class="dialog-ope warn"><span class="dialog-who">契約者が家族名義</span>「恐れ入ります。ご家族名義の契約は、当窓口では承れません。契約者ご本人から、各事業者へ直接お申込みいただく形になります。」</div>
+          </div>
+
+          <div class="script-subheader">E-3-3. 電気</div>
+          <div class="dialog">
+            <div class="dialog-ope"><span class="dialog-who">オペ</span>「今、どちらの電力会社とご契約でしょうか。お手元の検針票に、お客様番号が書かれています。」</div>
+            <div class="dialog-ope"><span class="dialog-who">オペ</span>「新居で電気を使い始める日は、いつがご希望ですか。」</div>
+            <div class="dialog-ope"><span class="dialog-who">オペ</span>「ご希望の電力会社やプランはございますか。」</div>
+            <div class="dialog-ope warn"><span class="dialog-who">比較を聞かれた場合</span>「お客様のエリアで申込みできるプランを、事実に沿ってお伝えします。どれがよいかは、お客様のお使い方によりますので、ご判断はお客様にお願いしております。」（特定の事業者をおすすめしない）</div>
+          </div>
+
+          <div class="script-subheader">E-3-4. ガス</div>
+          <div class="dialog">
+            <div class="dialog-ope"><span class="dialog-who">オペ</span>「今、どちらのガス会社とご契約でしょうか。検針票にお客様番号があります。」</div>
+            <div class="dialog-ope"><span class="dialog-who">オペ</span>「新居でのガスの開栓は、いつがご希望ですか。開栓のときは、立会いが必要になることがあります。」</div>
+            <div class="dialog-ope"><span class="dialog-who">オペ</span>「当日、お立会いいただける時間帯はございますか。」</div>
+            <div class="dialog-ope"><span class="dialog-who">補足</span>「立会いの日程は、事業者から直接ご連絡が入る場合があります。メールか電話に、ご注意ください。」</div>
+          </div>
+
+          <div class="script-subheader">E-3-5. 水道</div>
+          <div class="dialog">
+            <div class="dialog-ope"><span class="dialog-who">オペ</span>「今のお住まいの水道の使用を、いつまでにしますか。」</div>
+            <div class="dialog-ope"><span class="dialog-who">オペ</span>「新居で水道を使い始める日は、いつでしょうか。」</div>
+            <div class="dialog-ope"><span class="dialog-who">補足</span>「水道は、お住まいの地域の水道局のお手続きになります。」</div>
+          </div>
+
+          <div class="script-subheader">E-3-6. インターネット</div>
+          <div class="dialog">
+            <div class="dialog-ope"><span class="dialog-who">オペ</span>「今、どちらの会社の、何というサービスをお使いですか。」</div>
+            <div class="dialog-ope"><span class="dialog-who">オペ</span>「新居は、戸建てでしょうか、集合住宅でしょうか。」</div>
+            <div class="dialog-ope"><span class="dialog-who">オペ</span>「工事が必要な場合、立会いは可能でしょうか。ご希望の工事日はありますか。」</div>
+            <div class="dialog-ope warn"><span class="dialog-who">補足</span>「回線によっては、工事の日程がお引越しに間に合わない場合があります。お急ぎの場合は、事業者へも早めにご確認ください。」</div>
+          </div>
+
+          <div class="script-subheader">E-3-7. 復唱と受付完了の案内</div>
+          <div class="dialog">
+            <div class="dialog-ope"><span class="dialog-who">オペ</span>「内容を確認します。〇〇様、〇月〇日お引越し。電気は〇〇、〇月〇日から。ガスは〇月〇日の〇時ごろ開栓。相違ございませんか。」</div>
+            <div class="dialog-ope warn"><span class="dialog-who">オペ</span>「以上で、各社へお手続きの内容をお渡しします。受理や開通の時期は各社の判断となりますので、当窓口からはお約束できません。標準的には、2〜5営業日ほどです。」</div>
+            <div class="dialog-ope"><span class="dialog-who">オペ</span>「各社から、完了のご連絡や、日程のご連絡が、メールかお電話で届きます。届いたら、ご確認ください。このあとの進み具合は、各事業者へお問合せください。」</div>
+          </div>
+
+          <div class="script-subheader">E-3-8. 連絡がつかないとき（発信）</div>
+          <div class="dialog">
+            <div class="dialog-ope"><span class="dialog-who">1回目の不在</span>6-1の留守電メッセージを残し、時間帯を変えて再度発信する</div>
+            <div class="dialog-ope warn"><span class="dialog-who">3回目まで不在</span>メールで「ご連絡先の確認のお願い」を送り、SVへ報告する（5-4⑤）</div>
+            <div class="dialog-ope"><span class="dialog-who">つながった際</span>「何度も失礼いたしました。引越しのお手続きの件で、お電話しました。お話ししてよろしいでしょうか。」</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- E-4 -->
+      <div class="subsection">
+        <h3>E-4. 利用できないとき（断りのトーク）</h3>
+        <div class="card">
+          <div class="principle-row"><span class="principle-icon">📌</span><span>型：①お詫び →②できない理由 →③代わりにできること</span></div>
+        </div>
+        <div class="script-detailed">
+          <div class="dialog">
+            <div class="dialog-ope warn"><span class="dialog-who">マイナンバーカードがない</span>→ 6-4③を参照</div>
+            <div class="dialog-ope warn"><span class="dialog-who">来庁予約だけしたい</span>「申し訳ございません。来庁の予約だけの申請はできません。新しい住所の役所の窓口で、そのまま手続きをお願いいたします。」</div>
+            <div class="dialog-ope warn"><span class="dialog-who">海外への引越し／海外からの引越し</span>「恐れ入ります。海外への、または海外からのお引越しは、本サービスをご利用いただけません。お近くの自治体窓口にご相談ください。」</div>
+            <div class="dialog-ope warn"><span class="dialog-who">引越し先が決まっていない</span>「申請には、新しい住所が必要です。お決まりになりましたら、改めてご利用ください。お急ぎの場合は、お電話をお待ちしています。」</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- E-5 -->
+      <div class="subsection">
+        <h3>E-5. クレーム・不満（5ステップに沿って）</h3>
+        <div class="script-detailed">
+          <div class="script-subheader">E-5-1. 受付とお詫び</div>
+          <div class="dialog">
+            <div class="dialog-ope"><span class="dialog-who">オペ</span>「お電話ありがとうございます。ご不便をおかけして、申し訳ございません。状況を詳しくお聞かせいただけますか。」</div>
+            <div class="dialog-ope"><span class="dialog-who">オペ</span>「お急ぎのところ、ご心配ですよね。」</div>
+          </div>
+
+          <div class="script-subheader">E-5-2. 事実確認</div>
+          <div class="dialog">
+            <div class="dialog-ope"><span class="dialog-who">オペ</span>「いつ、どの手続きで、どこまでお進みになりましたか。」</div>
+            <div class="dialog-ope"><span class="dialog-who">オペ</span>「どんな画面が表示されていましたか。エラーの文言は覚えていらっしゃいますか。」</div>
+          </div>
+
+          <div class="script-subheader">E-5-3. 解決策の提示</div>
+          <div class="dialog">
+            <div class="dialog-ope"><span class="dialog-who">できることを先に</span>「まず、私が確認して、〇〇の対応をいたします。」</div>
+            <div class="dialog-ope warn"><span class="dialog-who">できないこと</span>「〇〇は、当窓口ではお約束できません。ただ、〇〇でしたらすぐにできます。」</div>
+          </div>
+
+          <div class="script-subheader">E-5-4. 場面別</div>
+          <div class="dialog">
+            <div class="dialog-ope"><span class="dialog-who">来庁が必要と知らなかった</span>「ご案内が分かりにくく、申し訳ございません。転入届は、新しい住所の役所に行っていただく決まりです。いただいたご意見は、サイトの案内の改善に活かします。」</div>
+            <div class="dialog-ope"><span class="dialog-who">自治体の処理が遅い</span>「お待たせして、お気持ちはよく分かります。申請の処理は自治体が行っていて、私どもでは進み具合を操作できません。お急ぎの旨を、自治体の窓口に直接お伝えいただくのが確実です。」</div>
+            <div class="dialog-ope"><span class="dialog-who">事業者の手続きが遅い</span>「ご心配をおかけして申し訳ございません。標準では2〜5営業日ですが、事業者によって異なります。お急ぎでしたら、事業者へ直接お問合せいただければ、状況を確認できます。」</div>
+            <div class="dialog-ope warn"><span class="dialog-who">補償の要求</span>「ご迷惑をおかけしたことは、重く受け止めております。ご要望の内容は、責任者に確実にお伝えします。担当より、改めてご連絡いたします。」→ 個別の約束はせず、SVへ引継ぐ</div>
+          </div>
+
+          <div class="script-subheader">E-5-5. 終了</div>
+          <div class="dialog">
+            <div class="dialog-ope"><span class="dialog-who">オペ</span>「貴重なご意見をありがとうございました。今後の改善に活かします。」（履歴に「不満あり」と記録）</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- E-6 -->
+      <div class="subsection">
+        <h3>E-6. システム障害・エラー</h3>
+        <div class="script-detailed">
+          <div class="dialog">
+            <div class="dialog-ope"><span class="dialog-who">オペ</span>「申し訳ございません。ただいま、サイトの調子が悪いようです。状況を確認させてください。使っているのは、スマートフォンですか、パソコンですか。」</div>
+            <div class="dialog-ope"><span class="dialog-who">オペ</span>「どの画面で、どんな文言が出ましたか。何時ごろからでしょうか。」</div>
+            <div class="dialog-ope warn"><span class="dialog-who">全体の障害の場合</span>「ご不便をおかけしております。現在、復旧作業をしています。復旧しましたら、また、最初からお試しください。お手続きの期限が近い場合は、お知らせください。」</div>
+            <div class="dialog-ope"><span class="dialog-who">個別の症状の場合</span>「確認のうえ、改めてご連絡します。ご連絡先とお時間の希望を教えてください。」</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- E-7 -->
+      <div class="subsection">
+        <h3>E-7. 自治体職員からの電話</h3>
+        <div class="script-detailed">
+          <div class="dialog">
+            <div class="dialog-ope"><span class="dialog-who">申請データの内容</span>「データ項目と定義は、マイナポータルと同じで、差分はありません。署名の検証結果も、同じように連携しています。」</div>
+            <div class="dialog-ope"><span class="dialog-who">通知メール</span>「自治体様側でステータスを更新しても、申請者には通知メールは届きません。申請者には、申請状況の画面を確認し、『完了』になってから来庁するよう、お伝えしています。」</div>
+            <div class="dialog-ope"><span class="dialog-who">住民からの問合せ</span>「恐れ入りますが、サービスの使い方のお問合せは、当窓口へご案内ください。メールは <a href="mailto:hikkoshi-tetsuduki@012grp.co.jp">hikkoshi-tetsuduki@012grp.co.jp</a> です。」</div>
+            <div class="dialog-ope warn"><span class="dialog-who">範囲外</span>「正確にご回答するため、担当に確認します。お名前とご連絡先を、お伺いできますか。」（SVへ引継ぎ）</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- E-8 -->
+      <div class="subsection">
+        <h3>E-8. SVへの引継ぎ・保留</h3>
+        <div class="card">
+          <div class="script-detailed">
+            <div class="dialog">
+              <div class="dialog-ope"><span class="dialog-who">お客様へ</span>「担当の責任者に確認します。少々お待ちいただけますか。」</div>
+              <div class="dialog-ope"><span class="dialog-who">交代時</span>「お電話を代わりました、〇〇です。ここまでの内容は、確認しております。」</div>
+            </div>
+          </div>
+          <h4>SVへの引継ぎ事項</h4>
+          <div class="checklist">
+            <label><input type="checkbox"> お客様名</label>
+            <label><input type="checkbox"> 自治体</label>
+            <label><input type="checkbox"> 行政か民間か</label>
+            <label><input type="checkbox"> 問合せ内容</label>
+            <label><input type="checkbox"> これまでの対応</label>
+            <label><input type="checkbox"> お客様の希望</label>
+            <label><input type="checkbox"> 感情（不満の程度）</label>
+            <label><input type="checkbox"> 折返しの要否</label>
+          </div>
+          <div class="alert alert-info mt">
+            <strong>お客様に繰り返しお話しいただかない：</strong>引継ぎ時に、上記を口頭で簡潔に伝える
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+      <div class="footer-inner">
+        <div>引越し手続き窓口 コールセンター運用マニュアル v0.1 ドラフト</div>
+        <div>株式会社Wiz ｜ 2026年10月22日</div>
+        <div class="footer-note">本書は社外秘です。取り扱いにご注意ください。</div>
+      </div>
+    </footer>
+
+  </main>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
